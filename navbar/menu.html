@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew Haven Coffee</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header class="hero">
+  <nav class="navbar">
+    <h1 class="logo">Brew Haven</h1>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/navbar/about.html" target="_blank">About</a></li>
+      <li><a href="/navbar/menu.html" target="_blank">Menu</a></li>
+      <li><a href="/navbar/testimonials.html" target="_blank">Testimonials</a></li>
+      <li><a href="/navbar/contact.html" target="_blank">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hero-content">
+     <h2>Artisan Coffee. Honest Flavor.</h2>
+     <p>Welcome to Brew Haven, where every cup tells a story. 
+        Nestled in the heart of Nairobi, we blend tradition, innovation, and community into every roast.
+        Whether you're grabbing a morning espresso or settling in for an afternoon pour-over, 
+        Brew Haven is your sanctuary for flavor, warmth, and connection.</p>
+         <a href="#menu" class="cta">View Menu</a>
+  </div>
+</header>
+<hr class="section-divider">
+<hr class="section-divider">
+    <!-- Cart Icon -->
+<div class="cart-icon" onclick="openCart()">
+  &#128722;<span id="cart-count">0</span>
+</div>
+<!-- Menu Section -->
+<section class="menu">
+  <h2>Menu</h2>
+  <div class="menu-items">
+    <h2>Our Catalogue</h2>
+    <div class="item-cards">
+      <div class="item-card">
+        <h3>Kenyan AA</h3>
+        <p>Bold, fruity, and full-bodied. Grown in the highlands of Nyeri, 
+          this roast delivers notes of blackcurrant, citrus, and a hint of cocoa. 
+          Perfect for pour-over lovers and morning thinkers.</p>
+      </div>
+      <div class="item-card">
+        <h3>Espresso Roast</h3>
+        <p>Dark, rich, and smooth. Our signature espresso blend combines beans from Kiambu and 
+          Sidamo, roasted to perfection for a velvety crema and deep chocolate finish.</p>
+        </div>
+      <div class="item-card">
+        <h3>Iced Vanilla Cold Brew</h3>
+        <p>Sweet, chilled, and refreshing. Brewed over 18 hours and infused with real vanilla pods, 
+          this cold brew is your go-to for sunny afternoons and creative bursts.</p>
+      </div>
+      <div class="item-card">
+        <h3>Seasonal Special: Pumpkin Spice Latte </h3>
+        <p>A cozy blend of espresso, steamed milk, and house-made pumpkin spice syrup. 
+          Topped with whipped cream and a sprinkle of nutmeg.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Our Products</h2>
+  <div class="menu-grid">
+    <div class="menu-card" onclick="revealCartButton(this)">
+      <div class="image"><img src="/images/coffee.jpg" alt="Kenyan AA" /></div>
+      <br />
+      <h3>Kenyan AA</h3>
+      <p>KES. 300.00</p>
+      <button class="add-btn hidden" onclick="addToCart(event, 'Kenyan AA', 300, '/images/coffee.jpg')">Add to Cart</button>
+    </div>
+    <div class="menu-card" onclick="revealCartButton(this)">
+      <div class="image"><img src="/images/mocha.jpg" alt="Mocha Roast" /></div>
+      <br />
+      <h3>Mocha Roast</h3>
+      <p>KES. 450.00</p>
+      <button class="add-btn hidden" onclick="addToCart(event, 'Mocha Roast', 450, '/images/mocha.jpg')">Add to Cart</button>
+    </div>
+        <div class="menu-card" onclick="revealCartButton(this)">
+      <div class="image"><img src="/images/coffeecup.jpg" alt="Delight" /></div>
+      <br />
+      <h3>Delight</h3>
+      <p>KES. 650.00</p>
+      <button class="add-btn hidden" onclick="addToCart(event, 'Delight', 650, '/images/coffeecup.jpg')">Add to Cart</button>
+    </div>
+        <div class="menu-card" onclick="revealCartButton(this)">
+      <div class="image"><img src="/images/delight.jpg" alt="Take Away" /></div>
+      <br />
+      <h3>Take Away</h3>
+      <p>KES. 550.00</p>
+      <button class="add-btn hidden" onclick="addToCart(event, 'Take Away', 550, '/images/delight.jpg')">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- Toast Message -->
+<div id="toast" class="toast">Added to cart!</div>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="cart-modal hidden">
+  <h2>Your Order</h2>
+  <div id="cart-items"></div>
+  <div class="cart-total">Total: $<span id="cart-total">0</span></div>
+  <button onclick="checkout()">Checkout</button>
+</div>
+
+<!-- Payment Instructions -->
+<div id="payment-section" class="hidden">
+  <h2>Payment Instructions</h2>
+  <p>Pay via M-Pesa PayBill: <strong>123456</strong></p>
+  <p>Account Number: <strong>BREWHAVEN</strong></p>
+  <p>Total Amount: $<span id="final-amount"></span></p>
+</div>
+<hr class="section-divider">
+<section class="info">
+    <h2>Location & Hours</h2>
+            <div class="info">
+                <p>Address Sheywe Ward, Kakamega County, Kenya</p>
+                <br />
+                <h4>Hours</h4>
+                <ul>
+                    <li>Monday – Saturday: 8:00 AM – 6:00 PM </li>
+                    <li>Sunday: 9:00 AM – 4:00 PM</li>
+                </ul>
+                <br />
+                <h4>Directions</h4>
+                <p>We’re located just off the main road, across from the Sheywe Plaza. 
+                    Parking available. Look for the mural of a steaming coffee cup on our front wall.</p>
+            </div>
+    <hr class="section-divider">
+</section>
+<section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-cards">
+        <div class="gallery-card">
+            <img src="/images/coffee.jpg">
+        </div>
+            <div class="gallery-card">
+            <img src="/images/coffeecup.jpg">
+        </div>
+            <div class="gallery-card">
+            <img src="/images/mocha.jpg">
+        </div>
+            <div class="gallery-card">
+            <img src="/images/delight.jpg">
+        </div>
+    </div>
+</section>
+<hr class="section-divider">
+
+<footer>
+    <div class="links">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="menu.html">menu</a></li>
+            <li><a href="testimonials.html">testimonials</a></li>
+            <li><a href="about.html">about</a></li>
+        </ul>
+    </div>
+<div class="social">
+  <ul>
+    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+    <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+  </ul>
+</div>
+    <div class="copyright">
+        <p>&copy; 2025 Brew Haven. All rights reserved. Powered by Simon Cloud Tech</p>
+    </div>
+</footer>
+<script src="/script.js"></script>
+</body>
+</html>

@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brew Haven Coffee</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
 <header class="hero">
@@ -28,30 +29,32 @@
   </div>
 </header>
 <hr class="section-divider">
-<section class="about">
-    <h2>About us</h2>
-    <div class="about-container">
-        <div class="about-image">
-            <img src="/images/kitchen.jpg">
+<section class="contacts">
+    <h2>Get in Touch</h2>
+    <div class="contact-container">
+        <div class="address">
+            <p>We’d love to hear from you—whether it’s feedback, collaboration, or just a coffee chat.</p>
+            <br />
+            <ul>
+                <li>Email: <b>hello@brewhaven.co.ke</b></li>
+                <li>Phone: <b>+254 712 345 678</b></li>
+                <li>Address: <b>Sheywe Ward, Kakamega County, Kenya</b></li>
+                <li>Website: <b>www.brewhaven.co.ke</b></li>
+                </ul>
         </div>
-        <div class="about-info">
-            <h3>Learn about us</h3>
-            <p>Founded in 2018 by two lifelong friends and coffee enthusiasts, 
-                Brew Haven was born out of a shared dream: 
-                to create a space where coffee is more than a beverage—it’s a ritual, a conversation, 
-                a culture. Our beans are sourced directly from smallholder farms across Kenya, 
-                Ethiopia, and Rwanda, ensuring ethical practices and exceptional quality.</p>
-                <br />
-                <p>We believe in slow mornings, bold brews, and honest hospitality. 
-                    Our team of baristas is trained not just in technique, 
-                    but in storytelling—because every blend has a journey, 
-                    and every customer deserves to be part of it.</p>
-                    <br />
-                    <h4>At Brew Haven, we don’t just serve coffee. We serve moments.</h4>
+        <div class="contact-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Name" />
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" placeholder="Phone" />
+            <label for="concern">Message</label>
+            <textarea id="message">Enter concerns here</textarea>
+            <button onclick="validateForm()">Submit</button>
+            <p id="error"></p>
         </div>
     </div>
 </section>
-<hr class="section-divider">
+
 <footer>
     <div class="links">
         <ul>
@@ -73,6 +76,6 @@
         <p>&copy; 2025 Brew Haven. All rights reserved. Powered by Simon Cloud Tech</p>
     </div>
 </footer>
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
